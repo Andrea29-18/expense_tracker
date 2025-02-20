@@ -29,6 +29,15 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
+# Para manejar la autenticación y el envío de correos.
+gem "devise"
+
+# Para manejar tokens JWT en una API.
+gem "devise-jwt"
+
+# Para previsualizar correos en desarrollo (opcional).
+gem "letter_opener", group: :development
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
