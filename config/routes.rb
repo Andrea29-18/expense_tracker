@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
 
+    post "/incomes", to: "incomes#create"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

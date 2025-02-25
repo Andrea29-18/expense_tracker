@@ -280,3 +280,50 @@ Content-Type: application/json
 {
   "error": "Invalid email or password"
 }
+
+## Registrar Ingresos
+Envía una solicitud POST a /incomes con el siguiente cuerpo (en formato JSON):
+json
+Copy
+POST /incomes
+Content-Type: application/json
+Authorization: Bearer <token_de_autenticación>
+
+{
+  "income": {
+    "amount": 1000.50,
+    "date": "2023-10-10",
+    "description": "Salario mensual",
+    "category_id": 1
+  }
+}
+
+Respuestas
+Éxito (Código 201 - Created)
+
+json
+Copy
+{
+  "message": "Income created successfully",
+  "income": {
+    "id": 1,
+    "amount": 1000.5,
+    "date": "2023-10-10",
+    "description": "Salario mensual",
+    "category_id": 1,
+    "user_id": 1,
+    "created_at": "2023-10-10T12:00:00.000Z",
+    "updated_at": "2023-10-10T12:00:00.000Z"
+  }
+}
+
+Error (Código 422 - Unprocessable Entity)
+
+json
+Copy
+{
+  "errors": [
+    "Amount can't be blank",
+    "Category must exist"
+  ]
+}
